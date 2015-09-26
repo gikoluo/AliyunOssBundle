@@ -39,8 +39,11 @@ class GikoAliyunOssExtension extends Extension
             $container->setParameter('giko_aliyun.oss.accessKeySecret', $config['accessKeySecret']);
         }
         
-        if (isset($config['bucketname'])) {
-            $container->setParameter('giko_aliyun.oss.bucketname', $config['bucketname']);
+        if (isset($config['bucket'])) {
+            $container->setParameter('giko_aliyun.oss.bucket', $config['bucket']);
+        }
+        if (isset($config['cdn_domain'])) {
+            $container->setParameter('giko_aliyun.oss.cdn_domain', $config['cdn_domain']);
         }
     }
 }

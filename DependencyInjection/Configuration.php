@@ -25,7 +25,8 @@ class Configuration implements ConfigurationInterface
         ->scalarNode('server')->isRequired()->end()
         ->scalarNode('accessKeyId')->isRequired()->end()
         ->scalarNode('accessKeySecret')->isRequired()->end()
-        ->scalarNode('bucketname')->isRequired()->end()
+        ->scalarNode('bucket')->isRequired()->end()
+        ->scalarNode('cdn_domain')->isRequired()->end()
         ->end()
         ->end()
         ;
