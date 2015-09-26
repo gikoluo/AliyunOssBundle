@@ -26,5 +26,25 @@ class GikoAliyunOssExtension extends Extension
         
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
+        
+        if (isset($config['serverInternal'])) {
+            $container->setParameter('giko_aliyun.oss.serverInternal', $config['serverInternal']);
+        }
+        
+        if (isset($config['server'])) {
+            $container->setParameter('giko_aliyun.oss.server', $config['server']);
+        }
+        
+        if (isset($config['accessKeyId'])) {
+            $container->setParameter('giko_aliyun.oss.accessKeyId', $config['accessKeyId']);
+        }
+        
+        if (isset($config['accessKeySecret'])) {
+            $container->setParameter('giko_aliyun.oss.accessKeySecret', $config['accessKeySecret']);
+        }
+        
+        if (isset($config['bucketname'])) {
+            $container->setParameter('giko_aliyun.oss.bucketname', $config['bucketname']);
+        }
     }
 }

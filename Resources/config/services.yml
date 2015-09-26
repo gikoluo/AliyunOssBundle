@@ -10,5 +10,5 @@ services:
         arguments: ['@sonata.media.adapter.filesystem.aliyunoss']
     sonata.media.cdn.aliyunoss:
         class: Giko\AliyunOssBundle\Services\CDN
-        arguments: ['http://%oem.oss.bucket%.%oem.oss.cdn_domain%', '%giko_aliyun.oss.accessKeyId%']
+        arguments: ['http://%giko_aliyun.oss.bucket%.%giko_aliyun.oss.cdn_domain%', '%giko_aliyun.oss.accessKeyId%']
     
