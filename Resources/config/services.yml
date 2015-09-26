@@ -1,0 +1,16 @@
+services:
+    sonata.media.adapter.service.aliyunoss:
+        class: Giko\AliyunOssBundle\Services\AliyunOSS
+        arguments: ['%giko_aliyun.oss.server%', '%giko_aliyun.oss.accessKeyId%', '%giko_aliyun.oss.accessKeySecret%']
+    sonata.media.adapter.filesystem.aliyunoss:
+        class: Giko\AliyunOssBundle\Services\Adapter
+        arguments: ['@sonata.media.adapter.service.aliyunoss', '%giko_aliyun.oss.bucketname%']
+    sonata.media.filesystem.aliyunoss:
+        class: Gaufrette\Filesystem
+        arguments: ['@sonata.media.adapter.filesystem.aliyunoss']
+    sonata.media.cdn.aliyunoss:
+        class: Giko\AliyunOssBundle\Services\CDN
+        arguments: ['http://%oem.oss.bucket%.%oem.oss.cdn_domain%', '%giko_aliyun.oss.accessKeyId%']
+    sonata.media.generator.odm:
+        class: Sonata\MediaBundle\Generator\ODMGenerator
+    
