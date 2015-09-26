@@ -27,10 +27,6 @@ class GikoAliyunOssExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
         
-        if (isset($config['serverInternal'])) {
-            $container->setParameter('giko_aliyun.oss.serverInternal', $config['serverInternal']);
-        }
-        
         if (isset($config['server'])) {
             $container->setParameter('giko_aliyun.oss.server', $config['server']);
         }
