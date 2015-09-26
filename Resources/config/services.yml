@@ -11,6 +11,4 @@ services:
     sonata.media.cdn.aliyunoss:
         class: Giko\AliyunOssBundle\Services\CDN
         arguments: ['http://%oem.oss.bucket%.%oem.oss.cdn_domain%', '%giko_aliyun.oss.accessKeyId%']
-    sonata.media.generator.odm:
-        class: Sonata\MediaBundle\Generator\ODMGenerator
     
